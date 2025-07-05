@@ -1,0 +1,54 @@
+﻿@model IEnumerable<system_petshop.Models.Consultation>
+
+@{
+    ViewData["Title"] = "Consultation";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-info">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ConsultationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Note)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Animal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Veterinarian)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ConsultationDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Note)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Animal.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Veterinarian.Name)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ConsultationId" class="btn btn-info">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.ConsultationId" class="btn btn-secondary">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.ConsultationId" class="btn btn-alert">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
