@@ -1,1 +1,9 @@
-.vs/*
+bin/
+obj/
+*.user
+*.suo
+.vs/
+*.db
+*.db-shm
+*.db-wal
+system-petshop.csproj.user
