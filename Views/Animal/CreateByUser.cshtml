@@ -43,8 +43,8 @@
             <input type="hidden" asp-for="ClientId" value="@userId" />
 
             <div class="d-flex gap-2">
-                <button type="submit" class="btn btn-primary flex-fill">Salvar</button>
-                <a asp-action="Index" class="btn btn-secondary flex-fill">Cancelar</a>
+                <button type="submit" class="btn btn-primary flex-fill">Save</button>
+                <a asp-action="AnimalByUser" asp-route-id="@userId" class="btn btn-secondary flex-fill">Cancel</a>
             </div>
         </form>
     </div>

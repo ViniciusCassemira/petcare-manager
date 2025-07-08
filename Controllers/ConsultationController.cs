@@ -56,7 +56,7 @@ namespace system_petshop.Controllers
             var consultations = await _context.Consultation
                                       .Include(c => c.Animal)
                                       .Include(c => c.Veterinarian)
-                                      .Where(c => c.Animal.ClientId == veterinarianId)
+                                      .Where(c => c.VeterinarianId == veterinarianId)
                                       .ToListAsync();
 
             return View(consultations);
@@ -121,8 +121,8 @@ namespace system_petshop.Controllers
             {
                 return NotFound();
             }
-            ViewData["AnimalId"] = new SelectList(_context.Animal, "AnimalId", "AnimalId", consultation.AnimalId);
-            ViewData["VeterinarianId"] = new SelectList(_context.Veterinarian, "UserId", "UserId", consultation.VeterinarianId);
+            ViewData["AnimalId"] = new SelectList(_context.Animal, "AnimalId", "Name", consultation.AnimalId);
+            ViewData["VeterinarianId"] = new SelectList(_context.Veterinarian, "UserId", "Name", consultation.VeterinarianId);
             return View(consultation);
         }
 
@@ -158,8 +158,8 @@ namespace system_petshop.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AnimalId"] = new SelectList(_context.Animal, "AnimalId", "AnimalId", consultation.AnimalId);
-            ViewData["VeterinarianId"] = new SelectList(_context.Veterinarian, "UserId", "UserId", consultation.VeterinarianId);
+            ViewData["AnimalId"] = new SelectList(_context.Animal, "AnimalId", "Name", consultation.AnimalId);
+            ViewData["VeterinarianId"] = new SelectList(_context.Veterinarian, "UserId", "Name", consultation.VeterinarianId);
             return View(consultation);
         }
 

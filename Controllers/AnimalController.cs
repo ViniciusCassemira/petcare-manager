@@ -12,7 +12,7 @@ using system_petshop.Models;
 namespace system_petshop.Controllers
 {
     //[Authorize]
-    [Authorize(Roles = "client")]
+    //[Authorize(Roles = "client")]
     public class AnimalController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -101,7 +101,6 @@ namespace system_petshop.Controllers
         {
             ViewData["BreedId"] = new SelectList(_context.Breed, "BreedId", "Name");
             ViewData["ClientId"] = new SelectList(_context.Client, "UserId", "UserId");
-            // Modificação aqui: usar "Name" como texto a ser exibido
             ViewData["SpeciesId"] = new SelectList(_context.Species, "SpeciesId", "Name");
             return View();
         }
@@ -119,7 +118,6 @@ namespace system_petshop.Controllers
             }
             ViewData["BreedId"] = new SelectList(_context.Breed, "BreedId", "Name", animal.BreedId);
             ViewData["ClientId"] = new SelectList(_context.Client, "UserId", "UserId", animal.ClientId);
-            // Modificação aqui também para manter consistência
             ViewData["SpeciesId"] = new SelectList(_context.Species, "SpeciesId", "Name", animal.SpeciesId);
             return View(animal);
         }

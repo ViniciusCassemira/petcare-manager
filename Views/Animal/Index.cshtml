@@ -6,10 +6,7 @@
 
 <h1>Animals</h1>
 
-<p>
-   <a asp-action="Create" class="btn btn-info">Create New</a>
-</p>
-<table class="table">
+<table class="table table-bordered">
     <thead>
         <tr>
             <th>
@@ -30,7 +27,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Client)
             </th>
-            <th></th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -52,12 +49,10 @@
                 @Html.DisplayFor(modelItem => item.Species.Name)
             </td>
             <td>
-                    @Html.DisplayFor(modelItem => item.Client.GetType().Name)
+                    @Html.DisplayFor(modelItem => item.Client.Name)
             </td>
             <td>
-                    <a asp-action="Edit" asp-route-id="@item.AnimalId" class="btn btn-info">Edit</a>
                     <a asp-action="Details" asp-route-id="@item.AnimalId" class="btn btn-secondary">Details</a>
-                    <a asp-action="Delete" asp-route-id="@item.AnimalId" class="btn btn-danger">Delete</a>
             </td>
         </tr>
 }

@@ -4,11 +4,8 @@
     ViewData["Title"] = "Consultation";
 }
 
-<h1>Consultation</h1>
+<h1>Your Consultation</h1>
 
-<p>
-    <a asp-action="Create" class="btn btn-primary">Create New</a>
-</p>
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -28,25 +25,25 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ConsultationDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Note)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Animal.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Veterinarian.GetType().Name)
-            </td>
-            <td>
-                    <a asp-action="Edit" asp-route-id="@item.ConsultationId" class="btn btn-info">Edit</a>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ConsultationDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Note)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Animal.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Veterinarian.Name)
+                </td>
+                <td>
                     <a asp-action="Details" asp-route-id="@item.ConsultationId" class="btn btn-secondary">Details</a>
-            </td>
-        </tr>
-}
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

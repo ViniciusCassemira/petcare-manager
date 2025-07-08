@@ -4,28 +4,25 @@
     ViewData["Title"] = "Species";
 }
 
-<h1>Create</h1>
+<h2 class="text-center" Create Specie</h2>
 
-<h4>Species</h4>
-<hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 w-50 mx-auto">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
+
+            <div class="mb-2">
                 <label asp-for="Name" class="control-label"></label>
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+            
+            <div class="d-flex mb-2">
+                <input type="submit" value="Create" class="btn btn-primary flex-fill" />
+                <a asp-action="Index" class="btn btn-warning flex-fill">Back to List</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index" class="btn btn-warning">Back to List</a>
 </div>
 
 @section Scripts {
