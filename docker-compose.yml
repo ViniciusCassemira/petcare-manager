@@ -1,0 +1,23 @@
+services:
+  app:
+    build: 
+      context: .
+    ports:
+      - "5030:5030"
+
+  db:
+    image: mysql:8
+    environment:
+      
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - application
+
+networks:
+  application:
+    driver: bridge
+
+volumes:
+  db_data:
+  app_data:
