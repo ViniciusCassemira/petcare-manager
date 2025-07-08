@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vinic\\Desktop\\project-x\\system-petshop\\system-petshop.csproj": {}
+    "C:\\Users\\vinic\\Desktop\\petshop-system-csharp\\system-petshop.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vinic\\Desktop\\project-x\\system-petshop\\system-petshop.csproj": {
+    "C:\\Users\\vinic\\Desktop\\petshop-system-csharp\\system-petshop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vinic\\Desktop\\project-x\\system-petshop\\system-petshop.csproj",
+        "projectUniqueName": "C:\\Users\\vinic\\Desktop\\petshop-system-csharp\\system-petshop.csproj",
         "projectName": "system-petshop",
-        "projectPath": "C:\\Users\\vinic\\Desktop\\project-x\\system-petshop\\system-petshop.csproj",
+        "projectPath": "C:\\Users\\vinic\\Desktop\\petshop-system-csharp\\system-petshop.csproj",
         "packagesPath": "C:\\Users\\vinic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vinic\\Desktop\\project-x\\system-petshop\\obj\\",
+        "outputPath": "C:\\Users\\vinic\\Desktop\\petshop-system-csharp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

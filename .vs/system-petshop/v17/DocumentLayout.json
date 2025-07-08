@@ -1,10 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\vinic\\Desktop\\project-x\\system-petshop\\",
+  "WorkspaceRootPath": "C:\\Users\\vinic\\Desktop\\petshop-system-csharp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{49423C21-4F46-4155-B742-F55F1602C317}|system-petshop.csproj|c:\\users\\vinic\\desktop\\project-x\\system-petshop\\views\\animal\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{49423C21-4F46-4155-B742-F55F1602C317}|system-petshop.csproj|solutionrelative:views\\animal\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{49423C21-4F46-4155-B742-F55F1602C317}|system-petshop.csproj|c:\\users\\vinic\\desktop\\petshop-system-csharp\\controllers\\animalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49423C21-4F46-4155-B742-F55F1602C317}|system-petshop.csproj|solutionrelative:controllers\\animalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49423C21-4F46-4155-B742-F55F1602C317}|system-petshop.csproj|c:\\users\\vinic\\desktop\\petshop-system-csharp\\views\\animal\\createbyuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49423C21-4F46-4155-B742-F55F1602C317}|system-petshop.csproj|solutionrelative:views\\animal\\createbyuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49423C21-4F46-4155-B742-F55F1602C317}|system-petshop.csproj|c:\\users\\vinic\\desktop\\petshop-system-csharp\\views\\animal\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{49423C21-4F46-4155-B742-F55F1602C317}|system-petshop.csproj|solutionrelative:views\\animal\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,24 +22,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CreateByUser.cshtml",
+              "DocumentMoniker": "C:\\Users\\vinic\\Desktop\\petshop-system-csharp\\Views\\Animal\\CreateByUser.cshtml",
+              "RelativeDocumentMoniker": "Views\\Animal\\CreateByUser.cshtml",
+              "ToolTip": "C:\\Users\\vinic\\Desktop\\petshop-system-csharp\\Views\\Animal\\CreateByUser.cshtml",
+              "RelativeToolTip": "Views\\Animal\\CreateByUser.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACoAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-08T02:27:23.418Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\vinic\\Desktop\\petshop-system-csharp\\Views\\Animal\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Animal\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\vinic\\Desktop\\petshop-system-csharp\\Views\\Animal\\Edit.cshtml",
+              "RelativeToolTip": "Views\\Animal\\Edit.cshtml",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACgAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-08T02:27:14.556Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\vinic\\Desktop\\project-x\\system-petshop\\Views\\Animal\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Animal\\Index.cshtml",
-              "ToolTip": "C:\\Users\\vinic\\Desktop\\project-x\\system-petshop\\Views\\Animal\\Index.cshtml",
-              "RelativeToolTip": "Views\\Animal\\Index.cshtml",
-              "ViewState": "AgIAADMAAAAAAAAAAAAAADsAAABeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-05T19:21:52.829Z",
+              "Title": "AnimalController.cs",
+              "DocumentMoniker": "C:\\Users\\vinic\\Desktop\\petshop-system-csharp\\Controllers\\AnimalController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AnimalController.cs",
+              "ToolTip": "C:\\Users\\vinic\\Desktop\\petshop-system-csharp\\Controllers\\AnimalController.cs",
+              "RelativeToolTip": "Controllers\\AnimalController.cs",
+              "ViewState": "AgIAAI4AAAAAAAAAAAAAAJoAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-08T01:32:56.897Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             }
           ]
         }

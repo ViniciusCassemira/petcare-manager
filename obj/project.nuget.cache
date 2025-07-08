@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2v5N52JRrMg=",
+  "dgSpecHash": "VHAROkORhu8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\vinic\\Desktop\\project-x\\system-petshop\\system-petshop.csproj",
+  "projectFilePath": "C:\\Users\\vinic\\Desktop\\petshop-system-csharp\\system-petshop.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vinic\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\vinic\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

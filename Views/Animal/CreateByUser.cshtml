@@ -5,49 +5,50 @@
     ViewData["Title"] = "Animal";
 }
 
-<h1>Create</h1>
+<h1 class="text-center">Register a new Animal</h1>
 
-<h4>Animal</h4>
-<hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 w-50 mx-auto">
         <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+            <div class="mb-2">
+                <label asp-for="Name" class="form-label"></label>
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
+
+            <div class="mb-2">
+                <label asp-for="Description" class="form-label"></label>
                 <input asp-for="Description" class="form-control" />
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="DateBirth" class="control-label"></label>
-                <input asp-for="DateBirth" class="form-control" />
+
+            <div class="mb-2">
+                <label asp-for="DateBirth" class="form-label"></label>
+                <input asp-for="DateBirth" type="date" class="form-control" />
                 <span asp-validation-for="DateBirth" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="BreedId" class="control-label"></label>
-                <select asp-for="BreedId" class ="form-control" asp-items="ViewBag.BreedId"></select>
+
+            <div class="mb-2">
+                <label asp-for="BreedId" class="form-label">Breed</label>
+                <select asp-for="BreedId" class="form-select" asp-items="@(ViewData["BreedId"] as SelectList)"></select>
             </div>
-            <div class="form-group">
-                <label asp-for="SpeciesId" class="control-label"></label>
-                <select asp-for="SpeciesId" class ="form-control" asp-items="ViewBag.SpeciesId"></select>
+
+            <div class="mb-2">
+                <label asp-for="SpeciesId" class="form-label">Species</label>
+                <select asp-for="SpeciesId" class="form-select" asp-items="@(ViewData["SpeciesId"] as SelectList)"></select>
             </div>
-            <div class="form-group">
-                <input type="hidden" asp-for="ClientId" value="@userId"/>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+
+            <input type="hidden" asp-for="ClientId" value="@userId" />
+
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary flex-fill">Salvar</button>
+                <a asp-action="Index" class="btn btn-secondary flex-fill">Cancelar</a>
             </div>
         </form>
     </div>
-</div>
 
-<div>
-    <a asp-action="Index" class="btn btn-warning">Back to List</a>
 </div>
 
 @section Scripts {

@@ -99,15 +99,14 @@ namespace system_petshop.Controllers
         // GET: Animal/Create by user
         public IActionResult CreateByUser()
         {
-            ViewData["BreedId"] = new SelectList(_context.Breed, "BreedId", "BreedId");
+            ViewData["BreedId"] = new SelectList(_context.Breed, "BreedId", "Name");
             ViewData["ClientId"] = new SelectList(_context.Client, "UserId", "UserId");
-            ViewData["SpeciesId"] = new SelectList(_context.Species, "SpeciesId", "SpeciesId");
+            // Modificação aqui: usar "Name" como texto a ser exibido
+            ViewData["SpeciesId"] = new SelectList(_context.Species, "SpeciesId", "Name");
             return View();
         }
 
         // POST: Animal/Create by user
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateByUser([Bind("AnimalId,Name,Description,DateBirth,BreedId,SpeciesId,ClientId")] Animal animal)
@@ -118,12 +117,12 @@ namespace system_petshop.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["BreedId"] = new SelectList(_context.Breed, "BreedId", "BreedId", animal.BreedId);
+            ViewData["BreedId"] = new SelectList(_context.Breed, "BreedId", "Name", animal.BreedId);
             ViewData["ClientId"] = new SelectList(_context.Client, "UserId", "UserId", animal.ClientId);
-            ViewData["SpeciesId"] = new SelectList(_context.Species, "SpeciesId", "SpeciesId", animal.SpeciesId);
+            // Modificação aqui também para manter consistência
+            ViewData["SpeciesId"] = new SelectList(_context.Species, "SpeciesId", "Name", animal.SpeciesId);
             return View(animal);
         }
-
 
         // GET: Animal/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -138,9 +137,9 @@ namespace system_petshop.Controllers
             {
                 return NotFound();
             }
-            ViewData["BreedId"] = new SelectList(_context.Breed, "BreedId", "BreedId", animal.BreedId);
+            ViewData["BreedId"] = new SelectList(_context.Breed, "BreedId", "Name", animal.BreedId);
             ViewData["ClientId"] = new SelectList(_context.Client, "UserId", "UserId", animal.ClientId);
-            ViewData["SpeciesId"] = new SelectList(_context.Species, "SpeciesId", "SpeciesId", animal.SpeciesId);
+            ViewData["SpeciesId"] = new SelectList(_context.Species, "SpeciesId", "Name", animal.SpeciesId);
             return View(animal);
         }
 
@@ -176,9 +175,9 @@ namespace system_petshop.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["BreedId"] = new SelectList(_context.Breed, "BreedId", "BreedId", animal.BreedId);
+            ViewData["BreedId"] = new SelectList(_context.Breed, "BreedId", "Name", animal.BreedId);
             ViewData["ClientId"] = new SelectList(_context.Client, "UserId", "UserId", animal.ClientId);
-            ViewData["SpeciesId"] = new SelectList(_context.Species, "SpeciesId", "SpeciesId", animal.SpeciesId);
+            ViewData["SpeciesId"] = new SelectList(_context.Species, "SpeciesId", "Name", animal.SpeciesId);
             return View(animal);
         }
 

@@ -4,12 +4,12 @@
     ViewData["Title"] = "Animal";
 }
 
-<h1>Index</h1>
+<h1>Your pets</h1>
 
 <p>
-    <a asp-action="CreateByUser" class="btn btn-info">Create New</a>
+    <a asp-action="CreateByUser" class="btn btn-info">New pet</a>
 </p>
-<table class="table">
+<table class="table table-bordered">
     <thead>
         <tr>
             <th>
@@ -19,7 +19,7 @@
                 @Html.DisplayNameFor(model => model.Description)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DateBirth)
+                Date Birth
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Breed)
@@ -27,7 +27,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Species)
             </th>
-            <th></th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
