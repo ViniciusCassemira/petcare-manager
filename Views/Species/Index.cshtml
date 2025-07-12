@@ -4,18 +4,18 @@
     ViewData["Title"] = "Species";
 }
 
-<h1>Index</h1>
+<h1>Species</h1>
 
 <p>
-    <a asp-action="Create" class="btn btn-info">Create New</a>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
 </p>
-<table class="table">
+<table class="table table-bordered">
     <thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
-            <th></th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -26,7 +26,7 @@
             </td>
             <td>
                     <a asp-action="Edit" asp-route-id="@item.SpeciesId" class="btn btn-info">Edit</a>
-                    <a asp-action="Delete" asp-route-id="@item.SpeciesId" class="btn btn-alert">Delete</a>
+                    <a asp-action="Delete" asp-route-id="@item.SpeciesId" class="btn btn-danger">Delete</a>
             </td>
         </tr>
 }

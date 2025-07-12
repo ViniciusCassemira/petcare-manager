@@ -68,7 +68,8 @@ namespace system_petshop.Controllers
             {
                 _context.Add(veterinarian);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("ShowUsers", "Admin");
+                
             }
             ViewData["SpecialtyId"] = new SelectList(_context.Specialty, "SpecialtyId", "Description", veterinarian.SpecialtyId);
             return View(veterinarian);

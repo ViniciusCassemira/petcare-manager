@@ -7,9 +7,9 @@
 <h1>Specialties</h1>
 
 <p>
-    <a asp-action="Create" class="btn btn-info">Create New</a>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
 </p>
-<table class="table">
+<table class="table table-bordered">
     <thead>
         <tr>
             <th>
@@ -26,7 +26,7 @@
             </td>
             <td>
                     <a asp-action="Edit" asp-route-id="@item.SpecialtyId" class="btn btn-info">Edit</a>
-                    <a asp-action="Delete" asp-route-id="@item.SpecialtyId" class="btn btn-alert">Delete</a>
+                    <a asp-action="Delete" asp-route-id="@item.SpecialtyId" class="btn btn-danger">Delete</a>
             </td>
         </tr>
 }
