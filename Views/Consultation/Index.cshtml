@@ -40,11 +40,10 @@
                 @Html.DisplayFor(modelItem => item.Animal.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Veterinarian.GetType().Name)
+                @Html.DisplayFor(modelItem => item.Veterinarian.Name)
             </td>
             <td>
                     <a asp-action="Edit" asp-route-id="@item.ConsultationId" class="btn btn-info">Edit</a>
-                    <a asp-action="Details" asp-route-id="@item.ConsultationId" class="btn btn-secondary">Details</a>
             </td>
         </tr>
 }

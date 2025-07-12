@@ -21,7 +21,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.Veterinarian)
             </th>
-            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -39,9 +38,6 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Veterinarian.Name)
-                </td>
-                <td>
-                    <a asp-action="Details" asp-route-id="@item.ConsultationId" class="btn btn-secondary">Details</a>
                 </td>
             </tr>
         }

@@ -47,27 +47,6 @@ namespace system_petshop.Controllers
             return View(animals);
         }
 
-        // GET: Animal/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var animal = await _context.Animal
-                .Include(a => a.Breed)
-                .Include(a => a.Client)
-                .Include(a => a.Species)
-                .FirstOrDefaultAsync(m => m.AnimalId == id);
-            if (animal == null)
-            {
-                return NotFound();
-            }
-
-            return View(animal);
-        }
-
         // GET: Animal/Create
         public IActionResult Create()
         {   
@@ -114,7 +93,7 @@ namespace system_petshop.Controllers
             {
                 _context.Add(animal);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("AnimalByUser", "Animal", new { id = animal.ClientId });
             }
             ViewData["BreedId"] = new SelectList(_context.Breed, "BreedId", "Name", animal.BreedId);
             ViewData["ClientId"] = new SelectList(_context.Client, "UserId", "UserId", animal.ClientId);
