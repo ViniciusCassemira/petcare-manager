@@ -27,24 +27,6 @@ namespace system_petshop.Controllers
             return View(await _context.Exam.ToListAsync());
         }
 
-        // GET: Exam/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var exam = await _context.Exam
-                .FirstOrDefaultAsync(m => m.ExamId == id);
-            if (exam == null)
-            {
-                return NotFound();
-            }
-
-            return View(exam);
-        }
-
         // GET: Exam/Create
         public IActionResult Create()
         {

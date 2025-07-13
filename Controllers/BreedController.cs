@@ -27,24 +27,6 @@ namespace system_petshop.Controllers
             return View(await _context.Breed.ToListAsync());
         }
 
-        // GET: Breed/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var breed = await _context.Breed
-                .FirstOrDefaultAsync(m => m.BreedId == id);
-            if (breed == null)
-            {
-                return NotFound();
-            }
-
-            return View(breed);
-        }
-
         // GET: Breed/Create
         public IActionResult Create()
         {

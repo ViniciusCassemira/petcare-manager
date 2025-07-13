@@ -6,31 +6,31 @@
     var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 }
 
-<h2 class="text-center mb-4">Tem certeza que deseja excluir este pet?</h2>
+<h2 class="text-center mb-4">Are you sure you want to delete this pet?</h2>
 
 <div class="container w-75">
     <div class="mb-2 d-flex justify-content-between border-bottom pb-1">
-        <strong>Nome:</strong>
+        <strong>Name:</strong>
         <span>@Model.Name</span>
     </div>
     <div class="mb-2 d-flex justify-content-between border-bottom pb-1">
-        <strong>Descrição:</strong>
+        <strong>Description:</strong>
         <span>@Model.Description</span>
     </div>
     <div class="mb-2 d-flex justify-content-between border-bottom pb-1">
-        <strong>Data de Nascimento:</strong>
+        <strong>Birth Date:</strong>
         <span>@Model.DateBirth.ToShortDateString()</span>
     </div>
     <div class="mb-2 d-flex justify-content-between border-bottom pb-1">
-        <strong>Raça:</strong>
+        <strong>Breed:</strong>
         <span>@Model.Breed?.BreedId</span>
     </div>
     <div class="mb-2 d-flex justify-content-between border-bottom pb-1">
-        <strong>Espécie:</strong>
+        <strong>Specie:</strong>
         <span>@Model.Species?.SpeciesId</span>
     </div>
     <div class="mb-4 d-flex justify-content-between border-bottom pb-1">
-        <strong>Cliente:</strong>
+        <strong>Client:</strong>
         <span>@Model.Client?.GetType().Name</span>
     </div>
 

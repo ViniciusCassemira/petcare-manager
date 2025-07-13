@@ -26,24 +26,6 @@ namespace system_petshop.Controllers
             return View(await _context.Client.ToListAsync());
         }
 
-        // GET: Client/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var client = await _context.Client
-                .FirstOrDefaultAsync(m => m.UserId == id);
-            if (client == null)
-            {
-                return NotFound();
-            }
-
-            return View(client);
-        }
-
         // GET: Client/Create
         [AllowAnonymous]
         public IActionResult Create()

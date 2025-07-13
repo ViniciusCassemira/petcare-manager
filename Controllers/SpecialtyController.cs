@@ -27,24 +27,6 @@ namespace system_petshop.Controllers
             return View(await _context.Specialty.ToListAsync());
         }
 
-        // GET: Specialty/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var specialty = await _context.Specialty
-                .FirstOrDefaultAsync(m => m.SpecialtyId == id);
-            if (specialty == null)
-            {
-                return NotFound();
-            }
-
-            return View(specialty);
-        }
-
         // GET: Specialty/Create
         public IActionResult Create()
         {
