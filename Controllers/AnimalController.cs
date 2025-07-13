@@ -185,13 +185,14 @@ namespace system_petshop.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var animal = await _context.Animal.FindAsync(id);
+            var ClientId = animal.ClientId;
             if (animal != null)
             {
                 _context.Animal.Remove(animal);
             }
 
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("AnimalByUser", "Animal", new { id = ClientId });
         }
 
         private bool AnimalExists(int id)

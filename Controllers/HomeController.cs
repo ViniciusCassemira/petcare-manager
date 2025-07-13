@@ -8,10 +8,5 @@ namespace system_petshop.Controllers
         {
             return View();
         }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
     }
 }

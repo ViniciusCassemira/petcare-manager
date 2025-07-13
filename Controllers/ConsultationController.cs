@@ -61,27 +61,6 @@ namespace system_petshop.Controllers
             return View(consultations);
         }
 
-
-        // GET: Consultation/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var consultation = await _context.Consultation
-                .Include(c => c.Animal)
-                .Include(c => c.Veterinarian)
-                .FirstOrDefaultAsync(m => m.ConsultationId == id);
-            if (consultation == null)
-            {
-                return NotFound();
-            }
-
-            return View(consultation);
-        }
-
         // GET: Consultation/Create
         public IActionResult Create()
         {

@@ -27,24 +27,6 @@ namespace system_petshop.Controllers
             return View(await _context.Medicine.ToListAsync());
         }
 
-        // GET: Medicine/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var medicine = await _context.Medicine
-                .FirstOrDefaultAsync(m => m.MedicineId == id);
-            if (medicine == null)
-            {
-                return NotFound();
-            }
-
-            return View(medicine);
-        }
-
         // GET: Medicine/Create
         public IActionResult Create()
         {
