@@ -19,7 +19,7 @@ jobs:
       - name: Get version
         id: get_version
         run: |
-          version=$(jq -r '.AppSettings.Version' appsettings.json)
+          version=$(jq -r '.version' appsettings.json)
           echo "Project version: $version"
           echo "project_version=$version" >> $GITHUB_OUTPUT
 
