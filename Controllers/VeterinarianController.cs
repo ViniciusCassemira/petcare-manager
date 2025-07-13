@@ -28,25 +28,6 @@ namespace system_petshop.Controllers
             return View(await applicationDbContext.ToListAsync());
         }
 
-        // GET: Veterinarian/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var veterinarian = await _context.Veterinarian
-                .Include(v => v.Specialty)
-                .FirstOrDefaultAsync(m => m.UserId == id);
-            if (veterinarian == null)
-            {
-                return NotFound();
-            }
-
-            return View(veterinarian);
-        }
-
         // GET: Veterinarian/Create
         public IActionResult Create()
         {
@@ -68,7 +49,8 @@ namespace system_petshop.Controllers
             {
                 _context.Add(veterinarian);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("ShowUsers", "Admin");
+                
             }
             ViewData["SpecialtyId"] = new SelectList(_context.Specialty, "SpecialtyId", "Description", veterinarian.SpecialtyId);
             return View(veterinarian);

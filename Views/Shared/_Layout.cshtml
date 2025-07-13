@@ -8,16 +8,19 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - system_petshop</title>
+    <title>@ViewData["Title"] - System Petshop</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/system_petshop.styles.css" asp-append-version="true" />
+    <link rel="icon" type="image/svg+xml" href="~/favicon.svg"/>
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">system_petshop</a>
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                    <img src="~/favicon.svg" alt="Logo" style="height: 2rem;" />
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -83,7 +86,7 @@
                                 if (User.IsInRole("veterinarian"))
                                 {
                                     <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Consultation" asp-action="ConsultationByVeterinarian" asp-route-id="@userId">Consultation</a>
+                                        <a class="nav-link text-dark" asp-controller="Consultation" asp-action="ConsultationByVeterinarian" asp-route-id="@userId">Consultation</a>
                                     </li>
                                 }
                                 <li class="nav-item">
@@ -103,15 +106,15 @@
             </div>
         </nav>
     </header>
-    <div class="container">
+    <div class="container flex-fill">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - system_petshop - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        <div class="container text-center">
+            <p>Develop with ❤ by <a href="http://github.com/ViniciusCassemira" class="text-decoration-none text-black fw-bold">Vinicius</a></p>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

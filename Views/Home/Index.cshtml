@@ -1,8 +1,24 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Welcome";
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p>Access the <a href="https://github.com/ViniciusCassemira/petshop-system-csharp">repository</a> and rate my project!</p>
+    <p id="starCount"></p>
 </div>
+
+<div class="text-center">
+</div>
+
+<script>
+    fetch("https://api.github.com/repos/ViniciusCassemira/petshop-system-csharp")
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("starCount").innerText = `⭐ ${data.stargazers_count} stars`;
+        })
+        .catch(error => {
+            document.getElementById("starCount").innerText = "Ops! we can't count the stars around here 🤔";
+        });
+</script>
+

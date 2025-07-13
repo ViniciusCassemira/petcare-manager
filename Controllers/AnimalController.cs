@@ -12,7 +12,7 @@ using system_petshop.Models;
 namespace system_petshop.Controllers
 {
     //[Authorize]
-    [Authorize(Roles = "client")]
+    //[Authorize(Roles = "client")]
     public class AnimalController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -47,27 +47,6 @@ namespace system_petshop.Controllers
             return View(animals);
         }
 
-        // GET: Animal/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var animal = await _context.Animal
-                .Include(a => a.Breed)
-                .Include(a => a.Client)
-                .Include(a => a.Species)
-                .FirstOrDefaultAsync(m => m.AnimalId == id);
-            if (animal == null)
-            {
-                return NotFound();
-            }
-
-            return View(animal);
-        }
-
         // GET: Animal/Create
         public IActionResult Create()
         {   
@@ -99,15 +78,13 @@ namespace system_petshop.Controllers
         // GET: Animal/Create by user
         public IActionResult CreateByUser()
         {
-            ViewData["BreedId"] = new SelectList(_context.Breed, "BreedId", "BreedId");
+            ViewData["BreedId"] = new SelectList(_context.Breed, "BreedId", "Name");
             ViewData["ClientId"] = new SelectList(_context.Client, "UserId", "UserId");
-            ViewData["SpeciesId"] = new SelectList(_context.Species, "SpeciesId", "SpeciesId");
+            ViewData["SpeciesId"] = new SelectList(_context.Species, "SpeciesId", "Name");
             return View();
         }
 
         // POST: Animal/Create by user
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateByUser([Bind("AnimalId,Name,Description,DateBirth,BreedId,SpeciesId,ClientId")] Animal animal)
@@ -116,14 +93,13 @@ namespace system_petshop.Controllers
             {
                 _context.Add(animal);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("AnimalByUser", "Animal", new { id = animal.ClientId });
             }
-            ViewData["BreedId"] = new SelectList(_context.Breed, "BreedId", "BreedId", animal.BreedId);
+            ViewData["BreedId"] = new SelectList(_context.Breed, "BreedId", "Name", animal.BreedId);
             ViewData["ClientId"] = new SelectList(_context.Client, "UserId", "UserId", animal.ClientId);
-            ViewData["SpeciesId"] = new SelectList(_context.Species, "SpeciesId", "SpeciesId", animal.SpeciesId);
+            ViewData["SpeciesId"] = new SelectList(_context.Species, "SpeciesId", "Name", animal.SpeciesId);
             return View(animal);
         }
-
 
         // GET: Animal/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -138,9 +114,9 @@ namespace system_petshop.Controllers
             {
                 return NotFound();
             }
-            ViewData["BreedId"] = new SelectList(_context.Breed, "BreedId", "BreedId", animal.BreedId);
+            ViewData["BreedId"] = new SelectList(_context.Breed, "BreedId", "Name", animal.BreedId);
             ViewData["ClientId"] = new SelectList(_context.Client, "UserId", "UserId", animal.ClientId);
-            ViewData["SpeciesId"] = new SelectList(_context.Species, "SpeciesId", "SpeciesId", animal.SpeciesId);
+            ViewData["SpeciesId"] = new SelectList(_context.Species, "SpeciesId", "Name", animal.SpeciesId);
             return View(animal);
         }
 
@@ -176,9 +152,9 @@ namespace system_petshop.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["BreedId"] = new SelectList(_context.Breed, "BreedId", "BreedId", animal.BreedId);
+            ViewData["BreedId"] = new SelectList(_context.Breed, "BreedId", "Name", animal.BreedId);
             ViewData["ClientId"] = new SelectList(_context.Client, "UserId", "UserId", animal.ClientId);
-            ViewData["SpeciesId"] = new SelectList(_context.Species, "SpeciesId", "SpeciesId", animal.SpeciesId);
+            ViewData["SpeciesId"] = new SelectList(_context.Species, "SpeciesId", "Name", animal.SpeciesId);
             return View(animal);
         }
 
@@ -209,13 +185,14 @@ namespace system_petshop.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var animal = await _context.Animal.FindAsync(id);
+            var ClientId = animal.ClientId;
             if (animal != null)
             {
                 _context.Animal.Remove(animal);
             }
 
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("AnimalByUser", "Animal", new { id = ClientId });
         }
 
         private bool AnimalExists(int id)

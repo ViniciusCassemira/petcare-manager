@@ -1,0 +1,42 @@
+services:
+  app:
+    build: .
+    container_name: app
+    environment:
+      - DB_CONNECTION_STRING=Server=db;Database=system-petshop;User=root;Password=root;
+      - ASPNETCORE_URLS=http://+:5030
+    restart: always
+    ports:
+      - "5030:5030"
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - application
+
+  db:
+    image: mysql:8
+    container_name: db
+    restart: always
+    environment:
+      MYSQL_DATABASE: system-petshop
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3307:3306" 
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - application
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+networks:
+  application:
+    driver: bridge
+
+volumes:
+  db_data:

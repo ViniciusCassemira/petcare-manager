@@ -4,16 +4,16 @@
     ViewData["Title"] = "Consultation";
 }
 
-<h1>Index</h1>
+<h1>Consultation</h1>
 
 <p>
-    <a asp-action="Create" class="btn btn-info">Create New</a>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
 </p>
-<table class="table">
+<table class="table table-bordered">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.ConsultationDate)
+                Consultation Date
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Note)
@@ -24,7 +24,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Veterinarian)
             </th>
-            <th></th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -40,11 +40,10 @@
                 @Html.DisplayFor(modelItem => item.Animal.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Veterinarian.GetType().Name)
+                @Html.DisplayFor(modelItem => item.Veterinarian.Name)
             </td>
             <td>
                     <a asp-action="Edit" asp-route-id="@item.ConsultationId" class="btn btn-info">Edit</a>
-                    <a asp-action="Details" asp-route-id="@item.ConsultationId" class="btn btn-secondary">Details</a>
             </td>
         </tr>
 }

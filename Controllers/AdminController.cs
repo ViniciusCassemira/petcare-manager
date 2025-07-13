@@ -37,24 +37,6 @@ namespace system_petshop.Controllers
             return View(await _context.Admin.ToListAsync());
         }
 
-        // GET: Admin/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var admin = await _context.Admin
-                .FirstOrDefaultAsync(m => m.UserId == id);
-            if (admin == null)
-            {
-                return NotFound();
-            }
-
-            return View(admin);
-        }
-
         // GET: Admin/Create
         public IActionResult Create()
         {

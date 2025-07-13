@@ -2,12 +2,12 @@
 @* @model system_petshop.Models.Admin *@
 
 @{
-    ViewData["Title"] = "All Users";
+    ViewData["Title"] = "Common Users";
 }
 
-<h1>All Users</h1>
+<h1>Common users</h1>
 
-<table class="table">
+<table class="table table-bordered">
     <thead>
         <tr>
             <th>
@@ -17,7 +17,6 @@
                 @Html.DisplayNameFor(model => model.Email)
             </th>
             <th>Tipo de usuário</th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -36,5 +35,4 @@
     </tbody>
 </table>
 
-<a asp-action="Create" class="btn btn-primary">Create New</a>
 <a asp-action="Create" asp-controller="Veterinarian" class="btn btn-primary">New Veterinarian</a>

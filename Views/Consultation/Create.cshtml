@@ -4,43 +4,47 @@
     ViewData["Title"] = "Consultation";
 }
 
-<h1>Create</h1>
+<h2 class="text-center">New Consultation</h2>
 
-<h4>Consultation</h4>
-<hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6 mx-auto">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="ConsultationDate" class="control-label"></label>
+
+            <div class="mb-2">
+                <label asp-for="ConsultationDate" class="control-label">Consultation Date</label>
                 <input asp-for="ConsultationDate" class="form-control" />
                 <span asp-validation-for="ConsultationDate" class="text-danger"></span>
             </div>
-            <div class="form-group">
+
+            <div class="mb-2">
                 <label asp-for="Note" class="control-label"></label>
                 <input asp-for="Note" class="form-control" />
                 <span asp-validation-for="Note" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="AnimalId" class="control-label"></label>
-                <select asp-for="AnimalId" class ="form-control" asp-items="ViewBag.AnimalId"></select>
+
+            <div class="mb-2">
+                <label asp-for="AnimalId" class="control-label">Animal</label>
+                <select asp-for="AnimalId" class="form-control" asp-items="ViewBag.AnimalId"></select>
+                <span asp-validation-for="AnimalId" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="VeterinarianId" class="control-label"></label>
-                <select asp-for="VeterinarianId" class ="form-control" asp-items="ViewBag.VeterinarianId"></select>
+
+            <div class="mb-2">
+                <label asp-for="VeterinarianId" class="control-label">Veterinarian</label>
+                <select asp-for="VeterinarianId" class="form-control" asp-items="ViewBag.VeterinarianId"></select>
+                <span asp-validation-for="VeterinarianId" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+
+            <div class="d-flex mb-2">
+                <input type="submit" value="Create" class="btn btn-primary flex-fill me-2" />
+                <a asp-action="Index" class="btn btn-warning flex-fill">Back to List</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index" class="btn btn-warning">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
