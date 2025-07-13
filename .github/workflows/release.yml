@@ -1,0 +1,37 @@
+name: Create release with ZIP
+
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send message
+        run: echo "Starting process ✨"
+
+      - name: Copy project
+        uses: actions/checkout@v4
+
+      - name: Get version
+        id: get_version
+        run: |
+          version=$(jq -r '.AppSettings.Version' appsettings.json)
+          echo "Project version: $version"
+          echo "project_version=$version" >> $GITHUB_OUTPUT
+
+      - name: Zip files
+        run: zip -r release.zip .
+
+      - name: Create release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.get_version.outputs.project_version }}
+          name: Release ${{ steps.get_version.outputs.project_version }}
+          body: "Release content"
+          files: release.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
