@@ -4,7 +4,8 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Access the <a href="https://github.com/ViniciusCassemira/petshop-system-csharp">repository</a> and rate my project!</p>
+    <h3>PetCare Manager</h3>
+    <p>Access the <a href="https://github.com/ViniciusCassemira/petcare-manager">repository</a> and rate my project!</p>
     <p id="starCount"></p>
 </div>
 
@@ -12,7 +13,7 @@
 </div>
 
 <script>
-    fetch("https://api.github.com/repos/ViniciusCassemira/petshop-system-csharp")
+    fetch("https://api.github.com/repos/ViniciusCassemira/petcare-manager")
         .then(response => response.json())
         .then(data => {
             document.getElementById("starCount").innerText = `⭐ ${data.stargazers_count} stars`;
